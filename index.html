@@ -1,32 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SoundWave Festival 2025</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave Festival 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>SoundWave Festival 2025</h1>
-    <p>Feel the Vibe. Live the Music.</p>
-  </header>
+<!-- Navigation Bar -->
+<header class="navbar">
+    <div class="logo">🎵 SoundWave</div>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#lineup">Lineup</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#location">Location</a>
+        <a href="#music">Music</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-  <section class="section">
-    <h2>2025 Lineup</h2>
-    <div class="lineup-images">
-      <img src="https://source.unsplash.com/300x200/?dj,concert" alt="DJ performance" />
-      <img src="https://source.unsplash.com/300x200/?live,music" alt="Live band" />
-      <img src="https://source.unsplash.com/300x200/?festival,crowd" alt="Festival crowd" />
+<!-- Hero Section with Image Background -->
+<section id="hero" class="hero">
+    <div class="overlay"></div> <!-- Dark overlay for text contrast -->
+    <div class="hero-content">
+        <h1 class="glow">SoundWave Festival 2025</h1>
+        <p class="tagline">Feel the Vibe. Live the Music.</p>
+        <a href="#lineup" class="btn-glow">Explore Lineup</a>
     </div>
-  </section>
+</section>
 
-  <div class="floating-icon" title="Buy Tickets">🎫</div>
+<!-- Lineup Section -->
+<section id="lineup" class="section fade-in">
+    <h2 class="section-title">🎤 Lineup</h2>
+    <div class="lineup-images">
+        <div class="image-card">
+            <img src=image/image1.jpg alt="DJ">
+            <p>DJ Thunder</p>
+        </div>
+        <div class="image-card">
+            <img src=image/image2.jpg alt="Band">
+            <p>The Sonic Waves</p>
+        </div>
+        <div class="image-card">
+            <img src=image/image3.jpg alt="Stage">
+            <p>Midnight Pulse</p>
+        </div>
+    </div>
+</section>
 
-  <footer>
-    &copy; 2025 SoundWave Festival. All rights reserved.
-  </footer>
+<!-- Tickets Section -->
+<section id="tickets" class="section dark-bg fade-in">
+    <h2 class="section-title">🎟️ Tickets</h2>
+    <div class="pricing-cards">
+        <div class="card">
+            <h3>General</h3>
+            <p>$99</p>
+            <ul>
+                <li>1-Day Pass</li>
+                <li>Access to Main Stage</li>
+            </ul>
+        </div>
+        <div class="card featured">
+            <h3>VIP</h3>
+            <p>$199</p>
+            <ul>
+                <li>3-Day Pass</li>
+                <li>Backstage Access</li>
+                <li>Free Merch</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Group</h3>
+            <p>$399</p>
+            <ul>
+                <li>5 Tickets Bundle</li>
+                <li>Reserved Seating</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Location Section -->
+<section id="location" class="section fade-in">
+    <h2 class="section-title">📍 Location</h2>
+    <p>Sunset Park, California</p>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<!-- Music Player Section -->
+<section id="music" class="section">
+    <h2 class="section-title">🎶 Music Player</h2>
+    <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</section>
+
+<!-- Floating Icon -->
+<div class="floating-icon" title="Buy Tickets 🎫">🎟️</div>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <h2 class="section-title">Contact Us</h2>
+    <p>For queries, please reach out to us at <strong>support@soundwave.com</strong></p>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="social-icons">
+        <a href="#"><img src=image/image4.jpg alt="Instagram" class="social-icon"></a>
+        <a href="#"><img src=image/image5.jpg alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src=image/image6.jpg alt="Twitter" class="social-icon"></a>
+    </div>
+    <p>🎵 &copy; 2025 SoundWave Festival. All Rights Reserved | Designed for music lovers worldwide.</p>
+</footer>
+
+<!-- Dark Mode Toggle Button -->
+<div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    🌙
+</div>
+
+<!-- JavaScript for Dark Mode Toggle -->
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("light-mode");
+
+        const toggleIcon = document.querySelector('.dark-mode-toggle');
+        if (document.body.classList.contains("dark-mode")) {
+            toggleIcon.innerHTML = '🌞';  // Sun icon for dark mode
+        } else {
+            toggleIcon.innerHTML = '🌙';  // Moon icon for light mode
+        }
+    }
+
+    // Set default mode based on user preferences
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add("dark-mode");
+        document.querySelector('.dark-mode-toggle').innerHTML = '🌞';
+    } else {
+        document.body.classList.add("light-mode");
+        document.querySelector('.dark-mode-toggle').innerHTML = '🌙';
+    }
+</script>
 
 </body>
 </html>
